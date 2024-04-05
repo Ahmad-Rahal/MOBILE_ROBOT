@@ -1,0 +1,556 @@
+11:41:42 **** Build of configuration Debug for project robot ****
+make -j8 all 
+Building file: ../startup/startup_stm32.s
+Building file: ../startup/sysmem.c
+Invoking: MCU GCC Assembler
+Invoking: MCU GCC Compiler
+/home/kerhoas/WORKSPACE_WEB2/ROBOT_/WORKSPACE_ROBOT_SW4STM322/robot/Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+/home/kerhoas/WORKSPACE_WEB2/ROBOT_/WORKSPACE_ROBOT_SW4STM322/robot/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/sysmem.d" -MT"startup/sysmem.o" -o "startup/sysmem.o" "../startup/sysmem.c"
+Finished building: ../startup/startup_stm32.s
+ 
+Finished building: ../startup/sysmem.c
+ 
+Building target: robot.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"/home/kerhoas/WORKSPACE_WEB2/ROBOT_/WORKSPACE_ROBOT_SW4STM322/robot/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "robot.elf" @"objects.list"   -lm
+startup/startup_stm32.o: In function `LoopFillZerobss':
+/home/kerhoas/WORKSPACE_WEB2/ROBOT_/WORKSPACE_ROBOT_SW4STM322/robot/Debug/../startup/startup_stm32.s:83: undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:35: robot.elf] Error 1
+11:44:12 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+make: *** No rule to make target 'all'.  Stop.
+11:44:28 **** Clean-only build of configuration Debug for project robot ****
+make -j8 clean 
+make: *** No rule to make target 'clean'.  Stop.
+11:46:56 **** Build of configuration Debug for project robot ****
+make -j8 all 
+make: *** No rule to make target 'all'.  Stop.
+11:47:15 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+11:47:20 **** Clean-only build of configuration Debug for project robot ****
+make -j8 clean 
+rm -f *.o template.elf template.hex template.bin template.map
+11:47:21 **** Build of configuration Debug for project robot ****
+make -j8 all 
+arm-none-eabi-gcc -IFreeRTOS/Source/include/ -IFreeRTOS/Source/portable/GCC/ARM_CM4F/ -Iinc/ -Isrc/drv/ -I_Libraries/STM32F4xx_HAL_Driver/Inc/ -I_Libraries/STM32F4xx_StdPeriph_Driver/Inc/ -I_Libraries/CMSIS/Device/ST/STM32F4xx/Include/ -I_Libraries/CMSIS/Include/ -I_Libraries/BSP/STM32F4xx-Nucleo/ -DSTM32F411xE -ggdb -O0 -fcommon -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -Wl,--gc-sections  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -fsingle-precision-constant -Wall -Wextra -Warray-bounds -Wno-unused-parameter -TDevice/gcc.ld -mfloat-abi=hard -lc -lgcc -lgcov -lm -Wl,-Map=template.elf.map  _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c src/main.c Device/startup_stm32f411xe.s _Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.c src/stm32f4xx_hal_msp.c src/stm32f4xx_it.c src/system_stm32f4xx.c src/newlib_stubs.c src/SystemClock.c src/tickTimer.c src/captDistIR.c src/util.c src/motorCommand.c src/quadEncoder.c src/servoCommand.c src/pixyCam2.c src/captDistUltrason.c src/groveLCD.c src/drv/drv_i2c.c src/drv/drv_uart.c src/drv/drv_spi.c src/drv/drv_gpio.c FreeRTOS/Source/croutine.c FreeRTOS/Source/list.c FreeRTOS/Source/queue.c FreeRTOS/Source/tasks.c FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c FreeRTOS/Source/portable/MemMang/heap_1.c -o template.elf 
+src/pixyCam2.c: In function 'pixyCam2_getSync':
+src/pixyCam2.c:155:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/groveLCD.c: In function 'groveLCD_test':
+src/groveLCD.c:23:46: warning: pointer targets in passing argument 3 of 'i2c1_WriteRegBuffer' differ in signedness [-Wpointer-sign]
+   i2c1_WriteRegBuffer(RGB_ADDRESS, REG_RED,  tab, 1);
+                                              ^~~
+In file included from inc/main.h:21:0,
+                 from inc/groveLCD.h:10,
+                 from src/groveLCD.c:8:
+src/drv/drv_i2c.h:25:5: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int8_t * {aka signed char *}'
+ int i2c1_WriteRegBuffer(uint16_t addrSlave, uint8_t  regAddr,  uint8_t *data, int n_data);
+     ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-objcopy -O ihex template.elf   template.hex
+arm-none-eabi-objcopy -O binary template.elf template.bin
+11:48:37 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+11:50:28 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+arm-none-eabi-gcc -IFreeRTOS/Source/include/ -IFreeRTOS/Source/portable/GCC/ARM_CM4F/ -Iinc/ -Isrc/drv/ -I_Libraries/STM32F4xx_HAL_Driver/Inc/ -I_Libraries/STM32F4xx_StdPeriph_Driver/Inc/ -I_Libraries/CMSIS/Device/ST/STM32F4xx/Include/ -I_Libraries/CMSIS/Include/ -I_Libraries/BSP/STM32F4xx-Nucleo/ -DSTM32F411xE -ggdb -O0 -fcommon -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -Wl,--gc-sections  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -fsingle-precision-constant -Wall -Wextra -Warray-bounds -Wno-unused-parameter -TDevice/gcc.ld -mfloat-abi=hard -lc -lgcc -lgcov -lm -Wl,-Map=template.elf.map  _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c src/main.c Device/startup_stm32f411xe.s _Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.c src/stm32f4xx_hal_msp.c src/stm32f4xx_it.c src/system_stm32f4xx.c src/newlib_stubs.c src/SystemClock.c src/tickTimer.c src/captDistIR.c src/util.c src/motorCommand.c src/quadEncoder.c src/servoCommand.c src/pixyCam2.c src/captDistUltrason.c src/groveLCD.c src/drv/drv_i2c.c src/drv/drv_uart.c src/drv/drv_spi.c src/drv/drv_gpio.c FreeRTOS/Source/croutine.c FreeRTOS/Source/list.c FreeRTOS/Source/queue.c FreeRTOS/Source/tasks.c FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c FreeRTOS/Source/portable/MemMang/heap_1.c -o template.elf 
+src/pixyCam2.c: In function 'pixyCam2_getSync':
+src/pixyCam2.c:155:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/groveLCD.c: In function 'groveLCD_test':
+src/groveLCD.c:23:46: warning: pointer targets in passing argument 3 of 'i2c1_WriteRegBuffer' differ in signedness [-Wpointer-sign]
+   i2c1_WriteRegBuffer(RGB_ADDRESS, REG_RED,  tab, 1);
+                                              ^~~
+In file included from inc/main.h:21:0,
+                 from inc/groveLCD.h:10,
+                 from src/groveLCD.c:8:
+src/drv/drv_i2c.h:25:5: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int8_t * {aka signed char *}'
+ int i2c1_WriteRegBuffer(uint16_t addrSlave, uint8_t  regAddr,  uint8_t *data, int n_data);
+     ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-objcopy -O ihex template.elf   template.hex
+arm-none-eabi-objcopy -O binary template.elf template.bin
+11:50:42 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+arm-none-eabi-gcc -IFreeRTOS/Source/include/ -IFreeRTOS/Source/portable/GCC/ARM_CM4F/ -Iinc/ -Isrc/drv/ -I_Libraries/STM32F4xx_HAL_Driver/Inc/ -I_Libraries/STM32F4xx_StdPeriph_Driver/Inc/ -I_Libraries/CMSIS/Device/ST/STM32F4xx/Include/ -I_Libraries/CMSIS/Include/ -I_Libraries/BSP/STM32F4xx-Nucleo/ -DSTM32F411xE -ggdb -O0 -fcommon -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -Wl,--gc-sections  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -fsingle-precision-constant -Wall -Wextra -Warray-bounds -Wno-unused-parameter -TDevice/gcc.ld -mfloat-abi=hard -lc -lgcc -lgcov -lm -Wl,-Map=template.elf.map  _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c src/main.c Device/startup_stm32f411xe.s _Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.c src/stm32f4xx_hal_msp.c src/stm32f4xx_it.c src/system_stm32f4xx.c src/newlib_stubs.c src/SystemClock.c src/tickTimer.c src/captDistIR.c src/util.c src/motorCommand.c src/quadEncoder.c src/servoCommand.c src/pixyCam2.c src/captDistUltrason.c src/groveLCD.c src/drv/drv_i2c.c src/drv/drv_uart.c src/drv/drv_spi.c src/drv/drv_gpio.c FreeRTOS/Source/croutine.c FreeRTOS/Source/list.c FreeRTOS/Source/queue.c FreeRTOS/Source/tasks.c FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c FreeRTOS/Source/portable/MemMang/heap_1.c -o template.elf 
+src/pixyCam2.c: In function 'pixyCam2_getSync':
+src/pixyCam2.c:155:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/groveLCD.c: In function 'groveLCD_test':
+src/groveLCD.c:23:46: warning: pointer targets in passing argument 3 of 'i2c1_WriteRegBuffer' differ in signedness [-Wpointer-sign]
+   i2c1_WriteRegBuffer(RGB_ADDRESS, REG_RED,  tab, 1);
+                                              ^~~
+In file included from inc/main.h:21:0,
+                 from inc/groveLCD.h:10,
+                 from src/groveLCD.c:8:
+src/drv/drv_i2c.h:25:5: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int8_t * {aka signed char *}'
+ int i2c1_WriteRegBuffer(uint16_t addrSlave, uint8_t  regAddr,  uint8_t *data, int n_data);
+     ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-objcopy -O ihex template.elf   template.hex
+arm-none-eabi-objcopy -O binary template.elf template.bin
+11:51:01 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+arm-none-eabi-gcc -IFreeRTOS/Source/include/ -IFreeRTOS/Source/portable/GCC/ARM_CM4F/ -Iinc/ -Isrc/drv/ -I_Libraries/STM32F4xx_HAL_Driver/Inc/ -I_Libraries/STM32F4xx_StdPeriph_Driver/Inc/ -I_Libraries/CMSIS/Device/ST/STM32F4xx/Include/ -I_Libraries/CMSIS/Include/ -I_Libraries/BSP/STM32F4xx-Nucleo/ -DSTM32F411xE -ggdb -O0 -fcommon -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -Wl,--gc-sections  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -fsingle-precision-constant -Wall -Wextra -Warray-bounds -Wno-unused-parameter -TDevice/gcc.ld -mfloat-abi=hard -lc -lgcc -lgcov -lm -Wl,-Map=template.elf.map  _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c src/main.c Device/startup_stm32f411xe.s _Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.c src/stm32f4xx_hal_msp.c src/stm32f4xx_it.c src/system_stm32f4xx.c src/newlib_stubs.c src/SystemClock.c src/tickTimer.c src/captDistIR.c src/util.c src/motorCommand.c src/quadEncoder.c src/servoCommand.c src/pixyCam2.c src/captDistUltrason.c src/groveLCD.c src/drv/drv_i2c.c src/drv/drv_uart.c src/drv/drv_spi.c src/drv/drv_gpio.c FreeRTOS/Source/croutine.c FreeRTOS/Source/list.c FreeRTOS/Source/queue.c FreeRTOS/Source/tasks.c FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c FreeRTOS/Source/portable/MemMang/heap_1.c -o template.elf 
+src/groveLCD.c: In function 'groveLCD_test':
+src/groveLCD.c:23:46: warning: pointer targets in passing argument 3 of 'i2c1_WriteRegBuffer' differ in signedness [-Wpointer-sign]
+   i2c1_WriteRegBuffer(RGB_ADDRESS, REG_RED,  tab, 1);
+                                              ^~~
+In file included from inc/main.h:21:0,
+                 from inc/groveLCD.h:10,
+                 from src/groveLCD.c:8:
+src/drv/drv_i2c.h:25:5: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int8_t * {aka signed char *}'
+ int i2c1_WriteRegBuffer(uint16_t addrSlave, uint8_t  regAddr,  uint8_t *data, int n_data);
+     ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-objcopy -O ihex template.elf   template.hex
+arm-none-eabi-objcopy -O binary template.elf template.bin
+11:51:16 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+11:52:32 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+arm-none-eabi-gcc -IFreeRTOS/Source/include/ -IFreeRTOS/Source/portable/GCC/ARM_CM4F/ -Iinc/ -Isrc/drv/ -I_Libraries/STM32F4xx_HAL_Driver/Inc/ -I_Libraries/STM32F4xx_StdPeriph_Driver/Inc/ -I_Libraries/CMSIS/Device/ST/STM32F4xx/Include/ -I_Libraries/CMSIS/Include/ -I_Libraries/BSP/STM32F4xx-Nucleo/ -DSTM32F411xE -ggdb -O0 -fcommon -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -Wl,--gc-sections  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -fsingle-precision-constant -Wall -Wextra -Warray-bounds -Wno-unused-parameter -TDevice/gcc.ld -mfloat-abi=hard -lc -lgcc -lgcov -lm -Wl,-Map=template.elf.map  _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c src/main.c Device/startup_stm32f411xe.s _Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.c src/stm32f4xx_hal_msp.c src/stm32f4xx_it.c src/system_stm32f4xx.c src/newlib_stubs.c src/SystemClock.c src/tickTimer.c src/captDistIR.c src/util.c src/motorCommand.c src/quadEncoder.c src/servoCommand.c src/pixyCam2.c src/captDistUltrason.c src/groveLCD.c src/drv/drv_i2c.c src/drv/drv_uart.c src/drv/drv_spi.c src/drv/drv_gpio.c FreeRTOS/Source/croutine.c FreeRTOS/Source/list.c FreeRTOS/Source/queue.c FreeRTOS/Source/tasks.c FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c FreeRTOS/Source/portable/MemMang/heap_1.c -o template.elf 
+src/groveLCD.c: In function 'groveLCD_test':
+src/groveLCD.c:23:46: warning: pointer targets in passing argument 3 of 'i2c1_WriteRegBuffer' differ in signedness [-Wpointer-sign]
+   i2c1_WriteRegBuffer(RGB_ADDRESS, REG_RED,  tab, 1);
+                                              ^~~
+In file included from inc/main.h:21:0,
+                 from inc/groveLCD.h:10,
+                 from src/groveLCD.c:8:
+src/drv/drv_i2c.h:25:5: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int8_t * {aka signed char *}'
+ int i2c1_WriteRegBuffer(uint16_t addrSlave, uint8_t  regAddr,  uint8_t *data, int n_data);
+     ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-objcopy -O ihex template.elf   template.hex
+arm-none-eabi-objcopy -O binary template.elf template.bin
+13:48:31 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+13:48:36 **** Clean-only build of configuration Debug for project robot ****
+make -j8 clean 
+rm -f *.o template.elf template.hex template.bin template.map
+13:48:38 **** Build of configuration Debug for project robot ****
+make -j8 all 
+/home/kerhoas/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/arm-none-eabi-gcc -IFreeRTOS/Source/include/ -IFreeRTOS/Source/portable/GCC/ARM_CM4F/ -Iinc/ -Isrc/drv/ -I_Libraries/STM32F4xx_HAL_Driver/Inc/ -I_Libraries/STM32F4xx_StdPeriph_Driver/Inc/ -I_Libraries/CMSIS/Device/ST/STM32F4xx/Include/ -I_Libraries/CMSIS/Include/ -I_Libraries/BSP/STM32F4xx-Nucleo/ -DSTM32F411xE -ggdb -O0 -fcommon -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -Wl,--gc-sections  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -fsingle-precision-constant -Wall -Wextra -Warray-bounds -Wno-unused-parameter -TDevice/gcc.ld -mfloat-abi=hard -lc -lgcc -lgcov -lm -Wl,-Map=template.elf.map  _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c src/main.c Device/startup_stm32f411xe.s _Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.c src/stm32f4xx_hal_msp.c src/stm32f4xx_it.c src/system_stm32f4xx.c src/newlib_stubs.c src/SystemClock.c src/tickTimer.c src/captDistIR.c src/util.c src/motorCommand.c src/quadEncoder.c src/servoCommand.c src/pixyCam2.c src/captDistUltrason.c src/groveLCD.c src/drv/drv_i2c.c src/drv/drv_uart.c src/drv/drv_spi.c src/drv/drv_gpio.c FreeRTOS/Source/croutine.c FreeRTOS/Source/list.c FreeRTOS/Source/queue.c FreeRTOS/Source/tasks.c FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c FreeRTOS/Source/portable/MemMang/heap_1.c -o template.elf 
+src/groveLCD.c: In function 'groveLCD_test':
+src/groveLCD.c:23:46: warning: pointer targets in passing argument 3 of 'i2c1_WriteRegBuffer' differ in signedness [-Wpointer-sign]
+   i2c1_WriteRegBuffer(RGB_ADDRESS, REG_RED,  tab, 1);
+                                              ^~~
+In file included from inc/main.h:21:0,
+                 from inc/groveLCD.h:10,
+                 from src/groveLCD.c:8:
+src/drv/drv_i2c.h:25:5: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int8_t * {aka signed char *}'
+ int i2c1_WriteRegBuffer(uint16_t addrSlave, uint8_t  regAddr,  uint8_t *data, int n_data);
+     ^~~~~~~~~~~~~~~~~~~
+/home/kerhoas/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/arm-none-eabi-objcopy -O ihex template.elf   template.hex
+/home/kerhoas/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/arm-none-eabi-objcopy -O binary template.elf template.bin
+13:49:10 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+13:51:41 **** Clean-only build of configuration Debug for project robot ****
+make -j8 clean 
+rm -f *.o template.elf template.hex template.bin template.map
+13:51:43 **** Build of configuration Debug for project robot ****
+make -j8 all 
+/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/arm-none-eabi-gcc -IFreeRTOS/Source/include/ -IFreeRTOS/Source/portable/GCC/ARM_CM4F/ -Iinc/ -Isrc/drv/ -I_Libraries/STM32F4xx_HAL_Driver/Inc/ -I_Libraries/STM32F4xx_StdPeriph_Driver/Inc/ -I_Libraries/CMSIS/Device/ST/STM32F4xx/Include/ -I_Libraries/CMSIS/Include/ -I_Libraries/BSP/STM32F4xx-Nucleo/ -DSTM32F411xE -ggdb -O0 -fcommon -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -Wl,--gc-sections  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -fsingle-precision-constant -Wall -Wextra -Warray-bounds -Wno-unused-parameter -TDevice/gcc.ld -mfloat-abi=hard -lc -lgcc -lgcov -lm -Wl,-Map=template.elf.map  _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c src/main.c Device/startup_stm32f411xe.s _Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.c src/stm32f4xx_hal_msp.c src/stm32f4xx_it.c src/system_stm32f4xx.c src/newlib_stubs.c src/SystemClock.c src/tickTimer.c src/captDistIR.c src/util.c src/motorCommand.c src/quadEncoder.c src/servoCommand.c src/pixyCam2.c src/captDistUltrason.c src/groveLCD.c src/drv/drv_i2c.c src/drv/drv_uart.c src/drv/drv_spi.c src/drv/drv_gpio.c FreeRTOS/Source/croutine.c FreeRTOS/Source/list.c FreeRTOS/Source/queue.c FreeRTOS/Source/tasks.c FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c FreeRTOS/Source/portable/MemMang/heap_1.c -o template.elf 
+make: /plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.17.0.201812190825/tools/compiler/bin/arm-none-eabi-gcc: Command not found
+make: *** [Makefile:97: template.elf] Error 127
+13:52:18 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+arm-none-eabi-gcc -IFreeRTOS/Source/include/ -IFreeRTOS/Source/portable/GCC/ARM_CM4F/ -Iinc/ -Isrc/drv/ -I_Libraries/STM32F4xx_HAL_Driver/Inc/ -I_Libraries/STM32F4xx_StdPeriph_Driver/Inc/ -I_Libraries/CMSIS/Device/ST/STM32F4xx/Include/ -I_Libraries/CMSIS/Include/ -I_Libraries/BSP/STM32F4xx-Nucleo/ -DSTM32F411xE -ggdb -O0 -fcommon -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -Wl,--gc-sections  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -fsingle-precision-constant -Wall -Wextra -Warray-bounds -Wno-unused-parameter -TDevice/gcc.ld -mfloat-abi=hard -lc -lgcc -lgcov -lm -Wl,-Map=template.elf.map  _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c src/main.c Device/startup_stm32f411xe.s _Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.c src/stm32f4xx_hal_msp.c src/stm32f4xx_it.c src/system_stm32f4xx.c src/newlib_stubs.c src/SystemClock.c src/tickTimer.c src/captDistIR.c src/util.c src/motorCommand.c src/quadEncoder.c src/servoCommand.c src/pixyCam2.c src/captDistUltrason.c src/groveLCD.c src/drv/drv_i2c.c src/drv/drv_uart.c src/drv/drv_spi.c src/drv/drv_gpio.c FreeRTOS/Source/croutine.c FreeRTOS/Source/list.c FreeRTOS/Source/queue.c FreeRTOS/Source/tasks.c FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c FreeRTOS/Source/portable/MemMang/heap_1.c -o template.elf 
+src/groveLCD.c: In function 'groveLCD_test':
+src/groveLCD.c:23:46: warning: pointer targets in passing argument 3 of 'i2c1_WriteRegBuffer' differ in signedness [-Wpointer-sign]
+   i2c1_WriteRegBuffer(RGB_ADDRESS, REG_RED,  tab, 1);
+                                              ^~~
+In file included from inc/main.h:21:0,
+                 from inc/groveLCD.h:10,
+                 from src/groveLCD.c:8:
+src/drv/drv_i2c.h:25:5: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int8_t * {aka signed char *}'
+ int i2c1_WriteRegBuffer(uint16_t addrSlave, uint8_t  regAddr,  uint8_t *data, int n_data);
+     ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-objcopy -O ihex template.elf   template.hex
+arm-none-eabi-objcopy -O binary template.elf template.bin
+13:52:52 **** Clean-only build of configuration Debug for project robot ****
+make -j8 clean 
+rm -f *.o template.elf template.hex template.bin template.map
+13:52:54 **** Build of configuration Debug for project robot ****
+make -j8 all 
+arm-none-eabi-gcc -IFreeRTOS/Source/include/ -IFreeRTOS/Source/portable/GCC/ARM_CM4F/ -Iinc/ -Isrc/drv/ -I_Libraries/STM32F4xx_HAL_Driver/Inc/ -I_Libraries/STM32F4xx_StdPeriph_Driver/Inc/ -I_Libraries/CMSIS/Device/ST/STM32F4xx/Include/ -I_Libraries/CMSIS/Include/ -I_Libraries/BSP/STM32F4xx-Nucleo/ -DSTM32F411xE -ggdb -O0 -fcommon -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -Wl,--gc-sections  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -fsingle-precision-constant -Wall -Wextra -Warray-bounds -Wno-unused-parameter -TDevice/gcc.ld -mfloat-abi=hard -lc -lgcc -lgcov -lm -Wl,-Map=template.elf.map  _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c src/main.c Device/startup_stm32f411xe.s _Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.c src/stm32f4xx_hal_msp.c src/stm32f4xx_it.c src/system_stm32f4xx.c src/newlib_stubs.c src/SystemClock.c src/tickTimer.c src/captDistIR.c src/util.c src/motorCommand.c src/quadEncoder.c src/servoCommand.c src/pixyCam2.c src/captDistUltrason.c src/groveLCD.c src/drv/drv_i2c.c src/drv/drv_uart.c src/drv/drv_spi.c src/drv/drv_gpio.c FreeRTOS/Source/croutine.c FreeRTOS/Source/list.c FreeRTOS/Source/queue.c FreeRTOS/Source/tasks.c FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c FreeRTOS/Source/portable/MemMang/heap_1.c -o template.elf 
+src/groveLCD.c: In function 'groveLCD_test':
+src/groveLCD.c:23:46: warning: pointer targets in passing argument 3 of 'i2c1_WriteRegBuffer' differ in signedness [-Wpointer-sign]
+   i2c1_WriteRegBuffer(RGB_ADDRESS, REG_RED,  tab, 1);
+                                              ^~~
+In file included from inc/main.h:21:0,
+                 from inc/groveLCD.h:10,
+                 from src/groveLCD.c:8:
+src/drv/drv_i2c.h:25:5: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int8_t * {aka signed char *}'
+ int i2c1_WriteRegBuffer(uint16_t addrSlave, uint8_t  regAddr,  uint8_t *data, int n_data);
+     ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-objcopy -O ihex template.elf   template.hex
+arm-none-eabi-objcopy -O binary template.elf template.bin
+08:24:17 **** Build of configuration Debug for project robot ****
+make -j8 all 
+arm-none-eabi-gcc "../src/drv/drv_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_gpio.d" -MT"src/drv/drv_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_gpio.o"
+arm-none-eabi-gcc "../src/drv/drv_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_i2c.d" -MT"src/drv/drv_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_i2c.o"
+arm-none-eabi-gcc "../src/drv/drv_spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_spi.d" -MT"src/drv/drv_spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_spi.o"
+arm-none-eabi-gcc "../src/drv/drv_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_uart.d" -MT"src/drv/drv_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_uart.o"
+arm-none-eabi-gcc "../src/SystemClock.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/SystemClock.d" -MT"src/SystemClock.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/SystemClock.o"
+arm-none-eabi-gcc "../src/captDistIR.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/captDistIR.d" -MT"src/captDistIR.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/captDistIR.o"
+arm-none-eabi-gcc "../src/captDistUltrason.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/captDistUltrason.d" -MT"src/captDistUltrason.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/captDistUltrason.o"
+arm-none-eabi-gcc "../src/groveLCD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/groveLCD.d" -MT"src/groveLCD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/groveLCD.o"
+In file included from ../src/drv/drv_uart.c:4:
+../src/drv/drv_uart.h:8:10: fatal error: main.h: No such file or directory
+    8 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+In file included from ../src/drv/drv_i2c.c:8:
+../src/drv/drv_i2c.h:11:10: fatal error: main.h: No such file or directory
+   11 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+In file included from ../src/drv/drv_spi.c:6:
+../src/drv/drv_spi.h:8:10: fatal error: main.h: No such file or directory
+    8 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+make: *** [src/drv/subdir.mk:28: src/drv/drv_uart.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [src/drv/subdir.mk:28: src/drv/drv_i2c.o] Error 1
+make: *** [src/drv/subdir.mk:28: src/drv/drv_spi.o] Error 1
+../src/captDistIR.c:6:10: fatal error: captDistIR.h: No such file or directory
+    6 | #include "captDistIR.h"
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+make: *** [src/subdir.mk:61: src/captDistIR.o] Error 1
+../src/SystemClock.c:1:10: fatal error: SystemClock.h: No such file or directory
+    1 | #include "SystemClock.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [src/subdir.mk:61: src/SystemClock.o] Error 1
+In file included from ../src/drv/drv_gpio.c:5:
+../src/drv/drv_gpio.h:8:10: fatal error: main.h: No such file or directory
+    8 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+../src/captDistUltrason.c:5:10: fatal error: captDistUltrason.h: No such file or directory
+    5 | #include "captDistUltrason.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+../src/groveLCD.c:8:10: fatal error: groveLCD.h: No such file or directory
+    8 | #include "groveLCD.h"
+      |          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [src/drv/subdir.mk:28: src/drv/drv_gpio.o] Error 1
+make: *** [src/subdir.mk:61: src/captDistUltrason.o] Error 1
+make: *** [src/subdir.mk:61: src/groveLCD.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+08:24:57 **** Clean-only build of configuration Debug for project robot ****
+make -j8 clean 
+rm -rf ./src/drv/drv_gpio.d ./src/drv/drv_gpio.o ./src/drv/drv_i2c.d ./src/drv/drv_i2c.o ./src/drv/drv_spi.d ./src/drv/drv_spi.o ./src/drv/drv_uart.d ./src/drv/drv_uart.o
+rm -rf ./src/SystemClock.d ./src/SystemClock.o ./src/captDistIR.d ./src/captDistIR.o ./src/captDistUltrason.d ./src/captDistUltrason.o ./src/groveLCD.d ./src/groveLCD.o ./src/main.d ./src/main.o ./src/motorCommand.d ./src/motorCommand.o ./src/newlib_stubs.d ./src/newlib_stubs.o ./src/pixyCam2.d ./src/pixyCam2.o ./src/quadEncoder.d ./src/quadEncoder.o ./src/servoCommand.d ./src/servoCommand.o ./src/stm32f4xx_hal_msp.d ./src/stm32f4xx_hal_msp.o ./src/stm32f4xx_it.d ./src/stm32f4xx_it.o ./src/system_stm32f4xx.d ./src/system_stm32f4xx.o ./src/tickTimer.d ./src/tickTimer.o ./src/util.d ./src/util.o
+rm -rf ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_irda.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_irda.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp_template.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp_template.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smartcard.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smartcard.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
+rm -rf ./_Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.d ./_Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.o
+rm -rf ./FreeRTOS/Source/portable/Tasking/ARM_CM4F/port.d ./FreeRTOS/Source/portable/Tasking/ARM_CM4F/port.o
+rm -rf ./FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.d ./FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.o
+rm -rf ./FreeRTOS/Source/portable/RVDS/ARM_CM3/port.d ./FreeRTOS/Source/portable/RVDS/ARM_CM3/port.o
+rm -rf ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fsmc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fsmc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.o
+rm -rf ./FreeRTOS/Source/portable/RVDS/ARM_CM0/port.d ./FreeRTOS/Source/portable/RVDS/ARM_CM0/port.o
+rm -rf ./FreeRTOS/Source/portable/MemMang/heap_1.d ./FreeRTOS/Source/portable/MemMang/heap_1.o ./FreeRTOS/Source/portable/MemMang/heap_2.d ./FreeRTOS/Source/portable/MemMang/heap_2.o ./FreeRTOS/Source/portable/MemMang/heap_3.d ./FreeRTOS/Source/portable/MemMang/heap_3.o ./FreeRTOS/Source/portable/MemMang/heap_4.d ./FreeRTOS/Source/portable/MemMang/heap_4.o ./FreeRTOS/Source/portable/MemMang/heap_5.d ./FreeRTOS/Source/portable/MemMang/heap_5.o
+rm -rf ./FreeRTOS/Source/portable/IAR/ARM_CM4F/port.d ./FreeRTOS/Source/portable/IAR/ARM_CM4F/port.o ./FreeRTOS/Source/portable/IAR/ARM_CM4F/portasm.d ./FreeRTOS/Source/portable/IAR/ARM_CM4F/portasm.o
+rm -rf ./FreeRTOS/Source/portable/IAR/ARM_CM3/port.d ./FreeRTOS/Source/portable/IAR/ARM_CM3/port.o ./FreeRTOS/Source/portable/IAR/ARM_CM3/portasm.d ./FreeRTOS/Source/portable/IAR/ARM_CM3/portasm.o
+rm -rf ./FreeRTOS/Source/portable/IAR/ARM_CM0/port.d ./FreeRTOS/Source/portable/IAR/ARM_CM0/port.o ./FreeRTOS/Source/portable/IAR/ARM_CM0/portasm.d ./FreeRTOS/Source/portable/IAR/ARM_CM0/portasm.o
+rm -rf ./FreeRTOS/Source/portable/GCC/ARM_CM4F/port.d ./FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+rm -rf ./FreeRTOS/Source/portable/GCC/ARM_CM3_MPU/port.d ./FreeRTOS/Source/portable/GCC/ARM_CM3_MPU/port.o
+rm -rf ./FreeRTOS/Source/portable/GCC/ARM_CM3/port.d ./FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+rm -rf ./FreeRTOS/Source/portable/GCC/ARM_CM0/port.d ./FreeRTOS/Source/portable/GCC/ARM_CM0/port.o
+rm -rf ./FreeRTOS/Source/CMSIS_RTOS/cmsis_os.d ./FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
+rm -rf ./FreeRTOS/Source/croutine.d ./FreeRTOS/Source/croutine.o ./FreeRTOS/Source/event_groups.d ./FreeRTOS/Source/event_groups.o ./FreeRTOS/Source/list.d ./FreeRTOS/Source/list.o ./FreeRTOS/Source/queue.d ./FreeRTOS/Source/queue.o ./FreeRTOS/Source/tasks.d ./FreeRTOS/Source/tasks.o ./FreeRTOS/Source/timers.d ./FreeRTOS/Source/timers.o
+rm -rf ./Device/startup_stm32f411xe.d ./Device/startup_stm32f411xe.o
+rm -rf robot.bin robot.elf robot.list template.size.stdout
+ 
+08:24:58 **** Build of configuration Debug for project robot ****
+make -j8 all 
+arm-none-eabi-gcc "../src/drv/drv_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_gpio.d" -MT"src/drv/drv_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_gpio.o"
+arm-none-eabi-gcc "../src/drv/drv_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_i2c.d" -MT"src/drv/drv_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_i2c.o"
+arm-none-eabi-gcc "../src/drv/drv_spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_spi.d" -MT"src/drv/drv_spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_spi.o"
+arm-none-eabi-gcc "../src/drv/drv_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_uart.d" -MT"src/drv/drv_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_uart.o"
+arm-none-eabi-gcc "../src/SystemClock.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/SystemClock.d" -MT"src/SystemClock.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/SystemClock.o"
+arm-none-eabi-gcc "../src/captDistIR.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/captDistIR.d" -MT"src/captDistIR.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/captDistIR.o"
+arm-none-eabi-gcc "../src/captDistUltrason.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/captDistUltrason.d" -MT"src/captDistUltrason.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/captDistUltrason.o"
+arm-none-eabi-gcc "../src/groveLCD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/groveLCD.d" -MT"src/groveLCD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/groveLCD.o"
+In file included from ../src/drv/drv_gpio.c:5:
+../src/drv/drv_gpio.h:8:10: fatal error: main.h: No such file or directory
+    8 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+In file included from ../src/drv/drv_i2c.c:8:
+../src/drv/drv_i2c.h:11:10: fatal error: main.h: No such file or directory
+   11 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+In file included from ../src/drv/drv_spi.c:6:
+../src/drv/drv_spi.h:8:10: fatal error: main.h: No such file or directory
+    8 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+In file included from ../src/drv/drv_uart.c:4:
+../src/drv/drv_uart.h:8:10: fatal error: main.h: No such file or directory
+    8 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+../src/SystemClock.c:1:10: fatal error: SystemClock.h: No such file or directory
+    1 | #include "SystemClock.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+../src/captDistIR.c:6:10: fatal error: captDistIR.h: No such file or directory
+    6 | #include "captDistIR.h"
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+../src/captDistUltrason.c:5:10: fatal error: captDistUltrason.h: No such file or directory
+    5 | #include "captDistUltrason.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+../src/groveLCD.c:8:10: fatal error: groveLCD.h: No such file or directory
+    8 | #include "groveLCD.h"
+      |          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [src/subdir.mk:61: src/captDistIR.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [src/drv/subdir.mk:28: src/drv/drv_gpio.o] Error 1
+make: *** [src/drv/subdir.mk:28: src/drv/drv_i2c.o] Error 1
+make: *** [src/drv/subdir.mk:28: src/drv/drv_spi.o] Error 1
+make: *** [src/subdir.mk:61: src/captDistUltrason.o] Error 1
+make: *** [src/subdir.mk:61: src/groveLCD.o] Error 1
+make: *** [src/drv/subdir.mk:28: src/drv/drv_uart.o] Error 1
+make: *** [src/subdir.mk:61: src/SystemClock.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+08:25:25 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+arm-none-eabi-gcc "../src/drv/drv_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_gpio.d" -MT"src/drv/drv_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_gpio.o"
+arm-none-eabi-gcc "../src/drv/drv_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_i2c.d" -MT"src/drv/drv_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_i2c.o"
+arm-none-eabi-gcc "../src/drv/drv_spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_spi.d" -MT"src/drv/drv_spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_spi.o"
+arm-none-eabi-gcc "../src/drv/drv_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_uart.d" -MT"src/drv/drv_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_uart.o"
+arm-none-eabi-gcc "../src/SystemClock.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/SystemClock.d" -MT"src/SystemClock.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/SystemClock.o"
+arm-none-eabi-gcc "../src/captDistIR.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/captDistIR.d" -MT"src/captDistIR.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/captDistIR.o"
+arm-none-eabi-gcc "../src/captDistUltrason.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/captDistUltrason.d" -MT"src/captDistUltrason.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/captDistUltrason.o"
+arm-none-eabi-gcc "../src/groveLCD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/groveLCD.d" -MT"src/groveLCD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/groveLCD.o"
+In file included from ../src/drv/drv_i2c.c:8:
+../src/drv/drv_i2c.h:11:10: fatal error: main.h: No such file or directory
+   11 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+In file included from ../src/drv/drv_spi.c:6:
+../src/drv/drv_spi.h:8:10: fatal error: main.h: No such file or directory
+    8 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+In file included from ../src/drv/drv_uart.c:4:
+../src/drv/drv_uart.h:8:10: fatal error: main.h: No such file or directory
+    8 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+In file included from ../src/drv/drv_gpio.c:5:
+../src/drv/drv_gpio.h:8:10: fatal error: main.h: No such file or directory
+    8 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+../src/SystemClock.c:1:10: fatal error: SystemClock.h: No such file or directory
+    1 | #include "SystemClock.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+../src/captDistIR.c:6:10: fatal error: captDistIR.h: No such file or directory
+    6 | #include "captDistIR.h"
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+../src/captDistUltrason.c:5:10: fatal error: captDistUltrason.h: No such file or directory
+    5 | #include "captDistUltrason.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+../src/groveLCD.c:8:10: fatal error: groveLCD.h: No such file or directory
+    8 | #include "groveLCD.h"
+      |          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [src/drv/subdir.mk:28: src/drv/drv_i2c.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [src/drv/subdir.mk:28: src/drv/drv_gpio.o] Error 1
+make: *** [src/drv/subdir.mk:28: src/drv/drv_uart.o] Error 1
+make: *** [src/drv/subdir.mk:28: src/drv/drv_spi.o] Error 1
+make: *** [src/subdir.mk:61: src/SystemClock.o] Error 1
+make: *** [src/subdir.mk:61: src/captDistIR.o] Error 1
+make: *** [src/subdir.mk:61: src/captDistUltrason.o] Error 1
+make: *** [src/subdir.mk:61: src/groveLCD.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+08:25:35 **** Clean-only build of configuration Debug for project robot ****
+make -j8 clean 
+rm -rf ./src/drv/drv_gpio.d ./src/drv/drv_gpio.o ./src/drv/drv_i2c.d ./src/drv/drv_i2c.o ./src/drv/drv_spi.d ./src/drv/drv_spi.o ./src/drv/drv_uart.d ./src/drv/drv_uart.o
+rm -rf ./src/SystemClock.d ./src/SystemClock.o ./src/captDistIR.d ./src/captDistIR.o ./src/captDistUltrason.d ./src/captDistUltrason.o ./src/groveLCD.d ./src/groveLCD.o ./src/main.d ./src/main.o ./src/motorCommand.d ./src/motorCommand.o ./src/newlib_stubs.d ./src/newlib_stubs.o ./src/pixyCam2.d ./src/pixyCam2.o ./src/quadEncoder.d ./src/quadEncoder.o ./src/servoCommand.d ./src/servoCommand.o ./src/stm32f4xx_hal_msp.d ./src/stm32f4xx_hal_msp.o ./src/stm32f4xx_it.d ./src/stm32f4xx_it.o ./src/system_stm32f4xx.d ./src/system_stm32f4xx.o ./src/tickTimer.d ./src/tickTimer.o ./src/util.d ./src/util.o
+rm -rf ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_irda.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_irda.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp_template.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp_template.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smartcard.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smartcard.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
+rm -rf ./_Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.d ./_Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.o
+rm -rf ./FreeRTOS/Source/portable/Tasking/ARM_CM4F/port.d ./FreeRTOS/Source/portable/Tasking/ARM_CM4F/port.o
+rm -rf ./FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.d ./FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.o
+rm -rf ./FreeRTOS/Source/portable/RVDS/ARM_CM3/port.d ./FreeRTOS/Source/portable/RVDS/ARM_CM3/port.o
+rm -rf ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fsmc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fsmc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.o ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.d ./_Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.o
+rm -rf ./FreeRTOS/Source/portable/RVDS/ARM_CM0/port.d ./FreeRTOS/Source/portable/RVDS/ARM_CM0/port.o
+rm -rf ./FreeRTOS/Source/portable/MemMang/heap_1.d ./FreeRTOS/Source/portable/MemMang/heap_1.o ./FreeRTOS/Source/portable/MemMang/heap_2.d ./FreeRTOS/Source/portable/MemMang/heap_2.o ./FreeRTOS/Source/portable/MemMang/heap_3.d ./FreeRTOS/Source/portable/MemMang/heap_3.o ./FreeRTOS/Source/portable/MemMang/heap_4.d ./FreeRTOS/Source/portable/MemMang/heap_4.o ./FreeRTOS/Source/portable/MemMang/heap_5.d ./FreeRTOS/Source/portable/MemMang/heap_5.o
+rm -rf ./FreeRTOS/Source/portable/IAR/ARM_CM4F/port.d ./FreeRTOS/Source/portable/IAR/ARM_CM4F/port.o ./FreeRTOS/Source/portable/IAR/ARM_CM4F/portasm.d ./FreeRTOS/Source/portable/IAR/ARM_CM4F/portasm.o
+rm -rf ./FreeRTOS/Source/portable/IAR/ARM_CM3/port.d ./FreeRTOS/Source/portable/IAR/ARM_CM3/port.o ./FreeRTOS/Source/portable/IAR/ARM_CM3/portasm.d ./FreeRTOS/Source/portable/IAR/ARM_CM3/portasm.o
+rm -rf ./FreeRTOS/Source/portable/IAR/ARM_CM0/port.d ./FreeRTOS/Source/portable/IAR/ARM_CM0/port.o ./FreeRTOS/Source/portable/IAR/ARM_CM0/portasm.d ./FreeRTOS/Source/portable/IAR/ARM_CM0/portasm.o
+rm -rf ./FreeRTOS/Source/portable/GCC/ARM_CM4F/port.d ./FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+rm -rf ./FreeRTOS/Source/portable/GCC/ARM_CM3_MPU/port.d ./FreeRTOS/Source/portable/GCC/ARM_CM3_MPU/port.o
+rm -rf ./FreeRTOS/Source/portable/GCC/ARM_CM3/port.d ./FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+rm -rf ./FreeRTOS/Source/portable/GCC/ARM_CM0/port.d ./FreeRTOS/Source/portable/GCC/ARM_CM0/port.o
+rm -rf ./FreeRTOS/Source/CMSIS_RTOS/cmsis_os.d ./FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
+rm -rf ./FreeRTOS/Source/croutine.d ./FreeRTOS/Source/croutine.o ./FreeRTOS/Source/event_groups.d ./FreeRTOS/Source/event_groups.o ./FreeRTOS/Source/list.d ./FreeRTOS/Source/list.o ./FreeRTOS/Source/queue.d ./FreeRTOS/Source/queue.o ./FreeRTOS/Source/tasks.d ./FreeRTOS/Source/tasks.o ./FreeRTOS/Source/timers.d ./FreeRTOS/Source/timers.o
+rm -rf ./Device/startup_stm32f411xe.d ./Device/startup_stm32f411xe.o
+rm -rf robot.bin robot.elf robot.list template.size.stdout
+ 
+08:25:35 **** Build of configuration Debug for project robot ****
+make -j8 all 
+arm-none-eabi-gcc "../src/drv/drv_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_gpio.d" -MT"src/drv/drv_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_gpio.o"
+arm-none-eabi-gcc "../src/drv/drv_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_i2c.d" -MT"src/drv/drv_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_i2c.o"
+arm-none-eabi-gcc "../src/drv/drv_spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_spi.d" -MT"src/drv/drv_spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_spi.o"
+arm-none-eabi-gcc "../src/drv/drv_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/drv/drv_uart.d" -MT"src/drv/drv_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/drv/drv_uart.o"
+arm-none-eabi-gcc "../src/SystemClock.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/SystemClock.d" -MT"src/SystemClock.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/SystemClock.o"
+arm-none-eabi-gcc "../src/captDistIR.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/captDistIR.d" -MT"src/captDistIR.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/captDistIR.o"
+arm-none-eabi-gcc "../src/captDistUltrason.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/captDistUltrason.d" -MT"src/captDistUltrason.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/captDistUltrason.o"
+arm-none-eabi-gcc "../src/groveLCD.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DNUCLEO_F411RE -DDEBUG -c -O0 -ffunction-sections -Wall -fstack-usage -MMD -MP -MF"src/groveLCD.d" -MT"src/groveLCD.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/groveLCD.o"
+In file included from ../src/drv/drv_i2c.c:8:
+../src/drv/drv_i2c.h:11:10: fatal error: main.h: No such file or directory
+   11 | #include "main.h"
+      |          ^~~~~~~~
+In file included from ../src/drv/drv_spi.c:6:
+../src/drv/drv_spi.h:8:10: fatal error: main.h: No such file or directory
+    8 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+In file included from ../src/drv/drv_gpio.c:5:
+../src/drv/drv_gpio.h:8:10: fatal error: main.h: No such file or directory
+    8 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+In file included from ../src/drv/drv_uart.c:4:
+../src/drv/drv_uart.h:8:10: fatal error: main.h: No such file or directory
+    8 | #include "main.h"
+      |          ^~~~~~~~
+compilation terminated.
+compilation terminated.
+../src/captDistUltrason.c:5:10: fatal error: captDistUltrason.h: No such file or directory
+    5 | #include "captDistUltrason.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+../src/groveLCD.c:8:10: fatal error: groveLCD.h: No such file or directory
+    8 | #include "groveLCD.h"
+      |          ^~~~~~~~~~~~
+compilation terminated.
+../src/SystemClock.c:1:10: fatal error: SystemClock.h: No such file or directory
+    1 | #include "SystemClock.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+../src/captDistIR.c:6:10: fatal error: captDistIR.h: No such file or directory
+    6 | #include "captDistIR.h"
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+make: *** [src/drv/subdir.mk:28: src/drv/drv_gpio.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [src/drv/subdir.mk:28: src/drv/drv_i2c.o] Error 1
+make: *** [src/drv/subdir.mk:28: src/drv/drv_spi.o] Error 1
+make: *** [src/drv/subdir.mk:28: src/drv/drv_uart.o] Error 1
+make: *** [src/subdir.mk:61: src/SystemClock.o] Error 1
+make: *** [src/subdir.mk:61: src/captDistIR.o] Error 1
+make: *** [src/subdir.mk:61: src/captDistUltrason.o] Error 1
+make: *** [src/subdir.mk:61: src/groveLCD.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+08:25:54 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+08:25:58 **** Clean-only build of configuration Debug for project robot ****
+make -j8 clean 
+rm -f *.o template.elf template.hex template.bin template.map
+08:25:58 **** Build of configuration Debug for project robot ****
+make -j8 all 
+arm-none-eabi-gcc -IFreeRTOS/Source/include/ -IFreeRTOS/Source/portable/GCC/ARM_CM4F/ -Iinc/ -Isrc/drv/ -I_Libraries/STM32F4xx_HAL_Driver/Inc/ -I_Libraries/STM32F4xx_StdPeriph_Driver/Inc/ -I_Libraries/CMSIS/Device/ST/STM32F4xx/Include/ -I_Libraries/CMSIS/Include/ -I_Libraries/BSP/STM32F4xx-Nucleo/ -DSTM32F411xE -ggdb -O0 -fcommon -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -Wl,--gc-sections  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -fsingle-precision-constant -Wall -Wextra -Warray-bounds -Wno-unused-parameter -TDevice/gcc.ld -mfloat-abi=hard -lc -lgcc -lgcov -lm -Wl,-Map=template.elf.map  _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c src/main.c Device/startup_stm32f411xe.s _Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.c src/stm32f4xx_hal_msp.c src/stm32f4xx_it.c src/system_stm32f4xx.c src/newlib_stubs.c src/SystemClock.c src/tickTimer.c src/captDistIR.c src/util.c src/motorCommand.c src/quadEncoder.c src/servoCommand.c src/pixyCam2.c src/captDistUltrason.c src/groveLCD.c src/drv/drv_i2c.c src/drv/drv_uart.c src/drv/drv_spi.c src/drv/drv_gpio.c FreeRTOS/Source/croutine.c FreeRTOS/Source/list.c FreeRTOS/Source/queue.c FreeRTOS/Source/tasks.c FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c FreeRTOS/Source/portable/MemMang/heap_1.c -o template.elf 
+src/groveLCD.c: In function 'groveLCD_test':
+src/groveLCD.c:23:46: warning: pointer targets in passing argument 3 of 'i2c1_WriteRegBuffer' differ in signedness [-Wpointer-sign]
+   23 |   i2c1_WriteRegBuffer(RGB_ADDRESS, REG_RED,  tab, 1);
+      |                                              ^~~
+      |                                              |
+      |                                              int8_t * {aka signed char *}
+In file included from inc/main.h:21,
+                 from inc/groveLCD.h:10,
+                 from src/groveLCD.c:8:
+src/drv/drv_i2c.h:25:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'int8_t *' {aka 'signed char *'}
+   25 | int i2c1_WriteRegBuffer(uint16_t addrSlave, uint8_t  regAddr,  uint8_t *data, int n_data);
+      |                                                                ~~~~~~~~~^~~~
+arm-none-eabi-objcopy -O ihex template.elf   template.hex
+arm-none-eabi-objcopy -O binary template.elf template.bin
+09:23:41 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+09:23:44 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+09:24:18 **** Incremental Build of configuration Debug for project robot ****
+make -j8 all 
+make: Nothing to be done for 'all'.
+16:20:10 **** Incremental Build of configuration Debug for project robot ****
+make all 
+make: Nothing to be done for 'all'.
+16:20:45 **** Incremental Build of configuration Debug for project robot ****
+make all 
+make: Nothing to be done for 'all'.
+16:23:16 **** Incremental Build of configuration Debug for project robot ****
+make all 
+make: Nothing to be done for 'all'.
+16:29:34 **** Incremental Build of configuration Debug for project robot ****
+make all 
+make: Nothing to be done for 'all'.
+18:35:56 **** Incremental Build of configuration Debug for project robot ****
+make all 
+make: Nothing to be done for 'all'.
+18:36:00 **** Clean-only build of configuration Debug for project robot ****
+make clean 
+rm -f *.o template.elf template.hex template.bin template.map
+18:36:00 **** Build of configuration Debug for project robot ****
+make all 
+arm-none-eabi-gcc -IFreeRTOS/Source/include/ -IFreeRTOS/Source/portable/GCC/ARM_CM4F/ -Iinc/ -Isrc/drv/ -I_Libraries/STM32F4xx_HAL_Driver/Inc/ -I_Libraries/STM32F4xx_StdPeriph_Driver/Inc/ -I_Libraries/CMSIS/Device/ST/STM32F4xx/Include/ -I_Libraries/CMSIS/Include/ -I_Libraries/BSP/STM32F4xx-Nucleo/ -DSTM32F411xE -ggdb -O0 -fcommon -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -Wl,--gc-sections  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -fsingle-precision-constant -Wall -Wextra -Warray-bounds -Wno-unused-parameter -TDevice/gcc.ld -mfloat-abi=hard -lc -lgcc -lgcov -lm -Wl,-Map=template.elf.map  _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c src/main.c Device/startup_stm32f411xe.s _Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.c src/stm32f4xx_hal_msp.c src/stm32f4xx_it.c src/system_stm32f4xx.c src/newlib_stubs.c src/SystemClock.c src/tickTimer.c src/captDistIR.c src/util.c src/motorCommand.c src/quadEncoder.c src/servoCommand.c src/pixyCam2.c src/captDistUltrason.c src/groveLCD.c src/drv/drv_i2c.c src/drv/drv_uart.c src/drv/drv_spi.c src/drv/drv_gpio.c FreeRTOS/Source/croutine.c FreeRTOS/Source/list.c FreeRTOS/Source/queue.c FreeRTOS/Source/tasks.c FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c FreeRTOS/Source/portable/MemMang/heap_1.c -o template.elf 
+src/groveLCD.c: In function 'groveLCD_test':
+src/groveLCD.c:23:46: warning: pointer targets in passing argument 3 of 'i2c1_WriteRegBuffer' differ in signedness [-Wpointer-sign]
+   23 |   i2c1_WriteRegBuffer(RGB_ADDRESS, REG_RED,  tab, 1);
+      |                                              ^~~
+      |                                              |
+      |                                              int8_t * {aka signed char *}
+In file included from inc/main.h:21,
+                 from inc/groveLCD.h:10,
+                 from src/groveLCD.c:8:
+src/drv/drv_i2c.h:25:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'int8_t *' {aka 'signed char *'}
+   25 | int i2c1_WriteRegBuffer(uint16_t addrSlave, uint8_t  regAddr,  uint8_t *data, int n_data);
+      |                                                                ~~~~~~~~~^~~~
+arm-none-eabi-objcopy -O ihex template.elf   template.hex
+arm-none-eabi-objcopy -O binary template.elf template.bin
+18:36:08 **** Incremental Build of configuration Debug for project robot ****
+make all 
+make: Nothing to be done for 'all'.
+09:21:32 **** Clean-only build of configuration Debug for project robot ****
+make clean 
+rm -f *.o template.elf template.hex template.bin template.map
+09:21:34 **** Build of configuration Debug for project robot ****
+make all 
+arm-none-eabi-gcc -IFreeRTOS/Source/include/ -IFreeRTOS/Source/portable/GCC/ARM_CM4F/ -Iinc/ -Isrc/drv/ -I_Libraries/STM32F4xx_HAL_Driver/Inc/ -I_Libraries/STM32F4xx_StdPeriph_Driver/Inc/ -I_Libraries/CMSIS/Device/ST/STM32F4xx/Include/ -I_Libraries/CMSIS/Include/ -I_Libraries/BSP/STM32F4xx-Nucleo/ -DSTM32F411xE -ggdb -O0 -fcommon -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -Wl,--gc-sections  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -fsingle-precision-constant -Wall -Wextra -Warray-bounds -Wno-unused-parameter -TDevice/gcc.ld -mfloat-abi=hard -lc -lgcc -lgcov -lm -Wl,-Map=template.elf.map  _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c src/main.c Device/startup_stm32f411xe.s _Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.c src/stm32f4xx_hal_msp.c src/stm32f4xx_it.c src/system_stm32f4xx.c src/newlib_stubs.c src/SystemClock.c src/tickTimer.c src/captDistIR.c src/util.c src/motorCommand.c src/quadEncoder.c src/servoCommand.c src/pixyCam2.c src/captDistUltrason.c src/groveLCD.c src/drv/drv_i2c.c src/drv/drv_uart.c src/drv/drv_spi.c src/drv/drv_gpio.c FreeRTOS/Source/croutine.c FreeRTOS/Source/list.c FreeRTOS/Source/queue.c FreeRTOS/Source/tasks.c FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c FreeRTOS/Source/portable/MemMang/heap_1.c -o template.elf 
+src/groveLCD.c: In function 'groveLCD_test':
+src/groveLCD.c:23:46: warning: pointer targets in passing argument 3 of 'i2c1_WriteRegBuffer' differ in signedness [-Wpointer-sign]
+   23 |   i2c1_WriteRegBuffer(RGB_ADDRESS, REG_RED,  tab, 1);
+      |                                              ^~~
+      |                                              |
+      |                                              int8_t * {aka signed char *}
+In file included from inc/main.h:21,
+                 from inc/groveLCD.h:10,
+                 from src/groveLCD.c:8:
+src/drv/drv_i2c.h:25:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'int8_t *' {aka 'signed char *'}
+   25 | int i2c1_WriteRegBuffer(uint16_t addrSlave, uint8_t  regAddr,  uint8_t *data, int n_data);
+      |                                                                ~~~~~~~~~^~~~
+arm-none-eabi-objcopy -O ihex template.elf   template.hex
+arm-none-eabi-objcopy -O binary template.elf template.bin

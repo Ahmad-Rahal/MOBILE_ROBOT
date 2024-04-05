@@ -1,0 +1,20 @@
+09:21:34 **** Build of configuration Debug for project robot ****
+make all 
+arm-none-eabi-gcc -IFreeRTOS/Source/include/ -IFreeRTOS/Source/portable/GCC/ARM_CM4F/ -Iinc/ -Isrc/drv/ -I_Libraries/STM32F4xx_HAL_Driver/Inc/ -I_Libraries/STM32F4xx_StdPeriph_Driver/Inc/ -I_Libraries/CMSIS/Device/ST/STM32F4xx/Include/ -I_Libraries/CMSIS/Include/ -I_Libraries/BSP/STM32F4xx-Nucleo/ -DSTM32F411xE -ggdb -O0 -fcommon -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -Wl,--gc-sections  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -fsingle-precision-constant -Wall -Wextra -Warray-bounds -Wno-unused-parameter -TDevice/gcc.ld -mfloat-abi=hard -lc -lgcc -lgcov -lm -Wl,-Map=template.elf.map  _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c _Libraries/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c src/main.c Device/startup_stm32f411xe.s _Libraries/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.c src/stm32f4xx_hal_msp.c src/stm32f4xx_it.c src/system_stm32f4xx.c src/newlib_stubs.c src/SystemClock.c src/tickTimer.c src/captDistIR.c src/util.c src/motorCommand.c src/quadEncoder.c src/servoCommand.c src/pixyCam2.c src/captDistUltrason.c src/groveLCD.c src/drv/drv_i2c.c src/drv/drv_uart.c src/drv/drv_spi.c src/drv/drv_gpio.c FreeRTOS/Source/croutine.c FreeRTOS/Source/list.c FreeRTOS/Source/queue.c FreeRTOS/Source/tasks.c FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c FreeRTOS/Source/portable/MemMang/heap_1.c -o template.elf 
+src/groveLCD.c: In function 'groveLCD_test':
+src/groveLCD.c:23:46: warning: pointer targets in passing argument 3 of 'i2c1_WriteRegBuffer' differ in signedness [-Wpointer-sign]
+   23 |   i2c1_WriteRegBuffer(RGB_ADDRESS, REG_RED,  tab, 1);
+      |                                              ^~~
+      |                                              |
+      |                                              int8_t * {aka signed char *}
+In file included from inc/main.h:21,
+                 from inc/groveLCD.h:10,
+                 from src/groveLCD.c:8:
+src/drv/drv_i2c.h:25:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'int8_t *' {aka 'signed char *'}
+   25 | int i2c1_WriteRegBuffer(uint16_t addrSlave, uint8_t  regAddr,  uint8_t *data, int n_data);
+      |                                                                ~~~~~~~~~^~~~
+arm-none-eabi-objcopy -O ihex template.elf   template.hex
+arm-none-eabi-objcopy -O binary template.elf template.bin
+
+09:21:38 Build Finished. 0 errors, 1 warnings. (took 4s.29ms)
+
